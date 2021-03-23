@@ -42,7 +42,9 @@ pip install requests
 import requests #导入所需要的包
 
  #构造一个报文头假装自己是一个浏览器
- #User-Agnet是浏览器的意思，我们从浏览器抄写一手
+ #User-Agnet是用户代理的意思
+ #Python3.5的User-Agent是Python-urllib/3.5，我们要修改这个变量，以免服务器发现我们是一个Python程序
+ #具体数据我们从浏览器抄写一手
 headers = {
     "User-Agnet":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36 Edg/89.0.774.57",
 }
