@@ -22,3 +22,24 @@ browser = Edge(options=options)
 #此时浏览器驱动已经加载完成了，我们无需再在函数中加载
 #同时也无需在函数中关闭取得，统一在程序结束关闭驱动
 ~~~
+
+## 2、seleniume无法定位元素
+* **检查标签是否在iframe内
+如果标签在iframe内，需要先使用方法browser.switch_to.frame()，进入frame内再定位标签
+
+## 3、注意设置延迟
+一些网站对爬虫进行方法措施，所以我们可以设置一下时间延迟，sleep几秒，这样可以避免一些错误
+比如在雪球网，太快点击会触发验证码，通过sleep可以规避
+比如在58同城，太快点击会导致页面元素没有加载上来，会出现无法定位元素的情况
+此时我们可以通过适当的sleep来规避这些错误
+
+## 4、优化报文头
+部分网站在接受post请求以及get请求时，会对cookies进行检验
+* **我们可以获取一个cookies
+~~~python
+ s = requests.Session()
+ s.get('主页的URL',headers = headers)
+ cookies = s.cookies
+ response = requests.post('接口的URL',data = data,headers = headers,cookies=cookies)
+~~~
+* **有时候我们无法获取到cookies，那么直接复制cookies，将cookies放入一个临时的header中
