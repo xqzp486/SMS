@@ -3,6 +3,7 @@
 * 并对一些难点进行介绍
 ## 1、使用浏览器模拟点击时，会频繁打开浏览器
 **我们将对这点进行优化，具体技术设置浏览器驱动参数headless同时禁止GPU图片加载,这样就不会打开浏览器**
+参考资料:微软给出的文档 <!https://docs.microsoft.com/en-us/microsoft-edge/webdriver-chromium/?tabs=python>
 
 * 需要先安装一个包
 ~~~python
