@@ -24,7 +24,7 @@ browser = Edge(options=options)
 ~~~
 
 ## 2、seleniume无法定位元素
-* **检查标签是否在iframe内
+* **检查标签是否在iframe内**
 如果标签在iframe内，需要先使用方法browser.switch_to.frame()，进入frame内再定位标签
 
 ## 3、注意设置延迟
@@ -35,11 +35,11 @@ browser = Edge(options=options)
 
 ## 4、优化报文头
 部分网站在接受post请求以及get请求时，会对cookies进行检验
-* **我们可以获取一个cookies
+* **我们可以获取一个cookies**
 ~~~python
  s = requests.Session()
  s.get('主页的URL',headers = headers)
  cookies = s.cookies
  response = requests.post('接口的URL',data = data,headers = headers,cookies=cookies)
 ~~~
-* **有时候我们无法获取到cookies，那么直接复制cookies，将cookies放入一个临时的header中
+* **有时候我们无法获取到cookies，那么直接复制cookies，将cookies放入一个临时的header中**
