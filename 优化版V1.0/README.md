@@ -17,4 +17,6 @@ options.use_chromium = True
 options.add_argument('headless')
 options.add_argument("disable-gpu")
 browser = Edge(options=options)
+#此时浏览器驱动已经加载完成了，我们无需再在函数中加载
+#同时也无需在函数中关闭取得，统一在程序结束关闭驱动
 ~~~
