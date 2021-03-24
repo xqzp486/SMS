@@ -24,8 +24,22 @@ browser = Edge(options=options)
 ~~~
 
 ## 2、seleniume无法定位元素
-* **检查标签是否在iframe内**
+* **检查标签是否在iframe内**<br/>
 如果标签在iframe内，需要先使用方法browser.switch_to.frame()，进入frame内再定位标签
+~~~python
+    url = 'https://www.med66.com/jibing/guzhe/'
+    browser.get(url)
+    register_button=browser.find_element_by_xpath('//a[@class="dzhan fl ucRegisterBtn"]')
+    register_button.click()
+    browser.switch_to.frame("frame1")
+
+    input_phone_number = browser.find_element_by_xpath('//input[@class="input-box01"]')
+    input_phone_number.send_keys(phone_number)
+    
+    sent_msg=browser.find_element_by_xpath('//a[@class="code-btn smsSend"]')
+    sent_msg.click()
+    time.sleep(sleep_number)
+~~~
 
 ## 3、注意设置延迟
 一些网站对爬虫进行方法措施，所以我们可以设置一下时间延迟，sleep几秒，这样可以避免一些错误
