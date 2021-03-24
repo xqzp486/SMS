@@ -118,6 +118,8 @@ pip install selenium
 
 * 解压到一个合适的位置，我们一会通过绝对路径的方式引用该驱动
 
+* 还有一种更便捷的方法，我们可以将驱动程序msedgedriver.exe改名为MicrosoftWebDriver.exe，并将此文件放在Python的安装路径下，就可以不用添加路径
+
 ### 2、代码解析
 
 #### （1）第一段代码解析
